@@ -1122,21 +1122,10 @@
                 </div>
             </div>
 
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label class="form-label" for="name" data-pt="Nome ou Banda" data-en="Name or Band">Nome ou Banda</label>
-                    <input type="text" id="name" name="name" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="email" data-pt="E-mail" data-en="Email">E-mail</label>
-                    <input type="email" id="email" name="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="message" data-pt="Mensagem" data-en="Message">Mensagem</label>
-                    <textarea id="message" name="message" class="form-textarea" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn" data-pt="Enviar Mensagem" data-en="Send Message">Enviar Mensagem</button>
-            </form>
+            <div class="contact-form" id="contactForm">
+                <p class="section-description" style="text-align:left;margin:0 0 18px;" data-pt="Prefere falar agora? Nosso assistente virtual está aqui pra isso: tira suas dúvidas sobre gravação, produção e horários, e anota seu contato pra gente retornar." data-en="Prefer to talk now? Our virtual assistant is here for that: it answers your questions about recording, production and scheduling, and takes your contact so we can get back to you.">Prefere falar agora? Nosso assistente virtual está aqui pra isso: tira suas dúvidas sobre gravação, produção e horários, e anota seu contato pra gente retornar.</p>
+                <p style="font-weight:700;margin:0;" data-pt="🎙️ Chame no balão de chat, no canto da tela" data-en="🎙️ Chat with us using the bubble in the corner">🎙️ Chame no balão de chat, no canto da tela</p>
+            </div>
         </div>
     </section>
 
@@ -1276,18 +1265,6 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         fadeElements.forEach(el => fadeInObserver.observe(el));
-
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('.submit-btn');
-            const originalText = btn.textContent;
-            btn.textContent = currentLang === 'pt' ? 'Mensagem Enviada!' : 'Message Sent!';
-            setTimeout(() => {
-                btn.textContent = originalText;
-                contactForm.reset();
-            }, 3000);
-        });
 
         startSlider();
         const hero = document.querySelector('.hero');
